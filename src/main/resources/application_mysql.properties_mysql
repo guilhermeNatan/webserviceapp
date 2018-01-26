@@ -1,0 +1,39 @@
+# ===============================
+# = DATA SOURCE
+# ===============================
+
+# Set here configurations for the database connection
+
+# Connection url for the database "netgloo_blog"
+spring.datasource.url = jdbc:postgresql://ec2-107-20-224-137.compute-1.amazonaws.com:5432/d4neafdocc88bg?sslmode=require&user=fhfmznwfyvxdyp&password=c061613ef1ba2fc3ae1ddfef0b32d05ea7326b9f40b55fd1647fc3ac30ecd591
+
+# Username and password
+spring.datasource.username = fhfmznwfyvxdyp
+spring.datasource.password = c061613ef1ba2fc3ae1ddfef0b32d05ea7326b9f40b55fd1647fc3ac30ecd591
+spring.jpa.generate-ddl=true
+
+
+# Keep the connection alive if idle for a long time (needed in production)
+spring.datasource.testWhileIdle = true
+spring.datasource.validationQuery = SELECT 1
+
+# ===============================
+# = JPA / HIBERNATE
+# ===============================
+
+# Use spring.jpa.properties.* for Hibernate native properties (the prefix is
+# stripped before adding them to the entity manager).
+
+# Show or not log for each sql query
+spring.jpa.show-sql = true
+
+# Hibernate ddl auto (create, create-drop, update): with "update" the database
+# schema will be automatically updated accordingly to java entities found in
+# the project
+spring.jpa.hibernate.ddl-auto = update
+
+# Naming strategy
+spring.jpa.hibernate.naming-strategy = org.hibernate.cfg.ImprovedNamingStrategy
+
+# Allows Hibernate to generate SQL optimized for a particular DBMS
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
