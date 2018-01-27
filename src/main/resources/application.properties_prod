@@ -5,11 +5,11 @@
 # Set here configurations for the database connection
 
 # Connection url for the database "netgloo_blog"
-spring.datasource.url = jdbc:postgresql://localhost:5432/guiacomercial_dev?useSSL=false
+spring.datasource.url = jdbc:postgresql://ec2-107-20-224-137.compute-1.amazonaws.com:5432/d4neafdocc88bg?sslmode=require&user=fhfmznwfyvxdyp&password=c061613ef1ba2fc3ae1ddfef0b32d05ea7326b9f40b55fd1647fc3ac30ecd591
 
 # Username and password
-spring.datasource.username = root_fake
-spring.datasource.password = root_fake
+spring.datasource.username = fhfmznwfyvxdyp
+spring.datasource.password = c061613ef1ba2fc3ae1ddfef0b32d05ea7326b9f40b55fd1647fc3ac30ecd591
 spring.jpa.generate-ddl=true
 
 
@@ -34,4 +34,3 @@ spring.jpa.hibernate.ddl-auto = update
 
 # Naming strategy
 spring.jpa.hibernate.naming-strategy = org.hibernate.cfg.ImprovedNamingStrategy
-
