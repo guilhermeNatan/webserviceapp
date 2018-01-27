@@ -1,4 +1,4 @@
-# webserviceapp - Guia Comercial
+# webserviceapp - Guia Comercial App
 
 Este projeto é parte do aplicativo Guia Comercial, neste módulo foi implementado um webservice de comunicação com o banco de dados
 
