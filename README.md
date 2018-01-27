@@ -11,6 +11,6 @@ Tecnologias utilizadas:
 
 Foi feito o deploy do projeto no Heroku  e pode ser acessado 
 pela url
-https://fathomless-headland-70985.herokuapp.com/guiacomercial
+https://fathomless-headland-70985.herokuapp.com/guiacomercial/empresas
 
 Para ver o módulo de implementação do aplicativo acesse https://github.com/guilhermeNatan/guiacomercialapp
