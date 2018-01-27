@@ -1,10 +1,10 @@
 # webserviceapp - Guia Comercial
 
-Este projeto é parte do aplicativo XXX, neste módulo foi implementado um webservice de comunicação com o banco de dados
+Este projeto é parte do aplicativo Guia Comercial, neste módulo foi implementado um webservice de comunicação com o banco de dados
 
 
 Tecnologias utilizadas:  
-- pring boot 
+- Spring boot 
 - BD : Postgresql 
 - Java 8 
 - Maven 
