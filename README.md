@@ -13,4 +13,4 @@ Foi feito o deploy do projeto no Heroku  e pode ser acessado
 pela url
 https://fathomless-headland-70985.herokuapp.com/guiacomercial
 
-Para ver o módulo de implementação do aplicativo acesse <url_repositorio_app> 
+Para ver o módulo de implementação do aplicativo acesse https://github.com/guilhermeNatan/guiacomercialapp
