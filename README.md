@@ -9,7 +9,7 @@ Tecnologias utilizadas:
 - Java 8 
 - Maven 
 
-Foi feito o deploy do projeto no Heroku  e pode ser acessado 
+O deploy do projeto foi feito no Heroku  e pode ser acessado 
 pela url
 https://fathomless-headland-70985.herokuapp.com/guiacomercial/empresas
 
