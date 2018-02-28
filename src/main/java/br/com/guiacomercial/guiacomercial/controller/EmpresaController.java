@@ -1,6 +1,8 @@
 package br.com.guiacomercial.guiacomercial.controller;
 
+import br.com.guiacomercial.guiacomercial.dao.ArquivoRepositorio;
 import br.com.guiacomercial.guiacomercial.dao.EmpresaRepositorio;
+import br.com.guiacomercial.guiacomercial.model.Arquivo;
 import br.com.guiacomercial.guiacomercial.model.Empresa;
 import br.com.guiacomercial.guiacomercial.util.Util;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -10,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.datasource.init.ScriptException;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +27,11 @@ public class EmpresaController {
 
     @Autowired
     private EmpresaRepositorio empresaRepositorio;
+    @Autowired
+    private ArquivoRepositorio arquivoRepositorio;
 
+    @Autowired
+    private ArquivoUtil arquivoUtil;
     /**
      * @return Objeto json com todas as empresas cadastradas .
      */
@@ -66,6 +73,24 @@ public class EmpresaController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> adicionar(@RequestBody final Empresa empresa) {
         if (empresaRepositorio.save(empresa) != null) {
+            return Util.createResponseEntity("Salvou com sucesso",
+                    HttpStatus.OK);
+        }
+
+        return Util.createResponseEntity("Falha ao salvar empresa",
+                HttpStatus.NOT_FOUND);
+    }
+
+    /**
+     * @param empresa
+     * @return Mensagem informado se empresa foi salva ou não com sucesso no banco de dados.
+     */
+    @PostMapping(value = "/adicionarComArquivo")
+    @ResponseBody
+    public ResponseEntity<?> adicionar(final Empresa empresa, @RequestParam("file") MultipartFile uploadfile) {
+        Arquivo arq = arquivoUtil.uploadFile(uploadfile);
+        empresa.setImagem(arq);
+        if (arq!=null && empresaRepositorio.save(empresa) != null) {
             return Util.createResponseEntity("Salvou com sucesso",
                     HttpStatus.OK);
         }
